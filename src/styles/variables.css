@@ -1,0 +1,14 @@
+/* styles/variables.css */
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    /* ... Other color variables ... */
+
+    --font-family: 'Arial', sans-serif;
+    /* ... Other typography variables ... */
+
+    --default-spacing: 8px;
+    --icon-spacing: 28px;
+    /* ... Other spacing variables ... */
+}

@@ -1,0 +1,40 @@
+/* SRadioButton.css */
+@import "../../styles/variables.css";
+
+.s-radio-button-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.s-radio-button-label {
+    margin-left: var(--default-spacing);
+}
+
+.s-radio-button {
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.inner-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    transition: background-color 0.3s;
+}
+
+.s-radio-button.selected .inner-circle {
+    display: block;
+}
+

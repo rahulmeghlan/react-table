@@ -1,0 +1,19 @@
+/* In your CSS file, e.g., fonts.css */
+
+@font-face {
+    font-family: 'Avenir-Heavy';
+    src: url('../fonts/avenir-heavy.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir-Book';
+    src: url('../fonts/avenir-book.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Avenir-Book', sans-serif;
+}
