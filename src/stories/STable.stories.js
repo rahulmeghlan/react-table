@@ -32,7 +32,8 @@ export const Table = {
         ],
         onSortChange: () => {
         },
-        sortColumn: 'id'
+        title: 'SList',
+        mobileView: false
     },
 };
 

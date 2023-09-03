@@ -2,9 +2,15 @@
 import React from 'react';
 import STableHeader from '../STableHeader';
 import STableBody from '../STableBody';
+import SList from '../SList';
 import './STable.css';
 
-function Table({headers, data, onSortChange, onCheckboxChange}) {
+function Table({headers, data, onSortChange, onCheckboxChange, mobileView, title}) {
+    if (mobileView) {
+        return (
+            <SList headers={headers} data={data} title={title}></SList>
+        );
+    }
     return (
         <div className="table">
             <STableHeader headers={headers} onSortChange={onSortChange} onCheckboxChange={onCheckboxChange}/>
