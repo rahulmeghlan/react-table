@@ -25,7 +25,10 @@ export const Table = {
             {id: Date.now(), label: '3G Availability', sortable: true}
         ],
         data: [
-            ['Singtel', 'HD1', 'Yes']
+            ['*Celcom Axiata (LTE)', 'CELCOM / MY Celcom / 502 19', 'Yes'],
+            ['*DiGi Telecom (LTE)', 'DiGi 1800 / DiGi / MYMY18', 'Yes'],
+            ['*Maxis (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'],
+            ['*U Mobile (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes']
         ],
         onSortChange: () => {
         },

@@ -9,6 +9,8 @@
     /* ... Other typography variables ... */
 
     --default-spacing: 8px;
+    --cell-spacing: 16px;
+    --cell-padding: 24px;
     --icon-spacing: 28px;
     /* ... Other spacing variables ... */
 }
