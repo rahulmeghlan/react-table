@@ -35,34 +35,19 @@
 }
 
 /* Table Header Cell */
-.table-header-cell {
+.s-table-header-cell {
     cursor: pointer;
     display: inline-block;
     margin-right: var(--space-16); /* Spacing between cells */
 }
 
 /* Sortable Icon */
-.table-header-cell.sortable span {
+.s-table-header-cell.sortable span {
     display: flex;
     align-items: center;
 }
 
-.table-header-cell.sortable i {
-    margin-left: var(--space-8);
-}
-
 /* Checkbox */
-.table-header-cell input[type="checkbox"] {
+.s-table-header-cell input[type="checkbox"] {
     margin-right: var(--space-4); /* Spacing between checkbox and label */
-}
-
-/* Style the table header */
-.table-header {
-
-}
-
-/* Style the table header cell */
-.table-header-cell {
-    flex: 1;
-    padding: var(--space-4);
 }

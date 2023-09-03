@@ -1,28 +1,28 @@
 import './STableHeader.css';
 
-function STableHeaderCell({label, sortable, onSortChange}) {
+function STableHeaderCell({label, sortable, onSortChange, sortHeaderIndex}) {
     const handleSortClick = () => {
         if (sortable) {
-            onSortChange(label);
+            onSortChange(sortHeaderIndex);
         }
     }
 
     return (
         <div onClick={handleSortClick} className='s-table-header-cell'>
-            <span> {label} {sortable ? <i className='fas fa-sort'></i> : ''}</span>
+            <span> {label} <i className='fas fa-sort'></i></span>
         </div>
     )
 }
 
 function STableHeader({headers, onSortChange, sortColumn}) {
-    const isListView = headers.length > 3;
     return (
-        <div className={`table-header ${isListView ? 'list-view' : ''}`}>
+        <div className="table-header">
             {headers.map((header, index) => (
                 <STableHeaderCell
                     key={index}
                     label={header.label}
                     sortable={header.sortable}
+                    sortHeaderIndex={index}
                     onSortChange={onSortChange}
                 />
             ))}
