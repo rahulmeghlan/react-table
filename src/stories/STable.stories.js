@@ -33,7 +33,8 @@ export const Table = {
         title: 'SList',
         mobileView: false,
         selectType: 'single',
-        color: "#4A148C"
+        color: "#4A148C",
+        theme: 'dark'
     },
 };
 

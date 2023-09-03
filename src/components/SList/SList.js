@@ -1,10 +1,11 @@
 // List.js
 import React from 'react';
 import './SList.css';
+import '../../styles/dark-theme.css';
 
-function SList({headers, data, title}) {
+function SList({headers, data, title, theme}) {
     return (
-        <div className="s-list">
+        <div className={`${theme ? `${theme}-theme` : ''} s-list`}>
             {title ? <div className="s-list-title">{title}</div> : ''}
             <div className="s-list-items">
                 {

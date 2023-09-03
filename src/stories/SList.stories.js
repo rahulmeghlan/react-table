@@ -32,7 +32,8 @@ export const List = {
         ],
         onSortChange: () => {
         },
-        title: 'SList Title'
+        title: 'SList Title',
+        theme: 'dark'
     },
 };
 

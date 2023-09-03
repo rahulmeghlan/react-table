@@ -1,0 +1,21 @@
+.dark-theme .table-header,
+.dark-theme .s-list-title {
+    background: #292C2E;
+    color: #C9CDCF;
+}
+
+.dark-theme .table-body,
+.dark-theme .s-list-items {
+    background: #222425;
+    color: #C9CDCF;
+}
+
+.dark-theme .table-body-row,
+.dark-theme .s-list-item {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.dark-theme .table-body-row:last-child,
+.dark-theme .s-list-item:last-child {
+    border-bottom: 0;
+}

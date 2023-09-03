@@ -4,8 +4,9 @@ import STableHeader from '../STableHeader';
 import STableBody from '../STableBody';
 import SList from '../SList';
 import './STable.css';
+import '../../styles/dark-theme.css';
 
-function Table({headers, rows, mobileView, title, selectType, color}) {
+function Table({headers, rows, mobileView, title, selectType, color, theme}) {
     const [sortedData, setSortedData] = useState(rows);
     const [sortDirection, setSortDirection] = useState('asc'); //Initial sorting direction
 
@@ -13,7 +14,6 @@ function Table({headers, rows, mobileView, title, selectType, color}) {
         const isAscending = sortDirection === 'asc';
         // Sort the data based on the selected header and direction
         const sorted = [...sortedData].sort((a, b) => {
-            console.log(a)
             if (a[headerIndex] < b[headerIndex]) {
                 return isAscending ? -1 : 1;
             }
@@ -34,7 +34,7 @@ function Table({headers, rows, mobileView, title, selectType, color}) {
         );
     }
     return (
-        <div className="table">
+        <div className={`${theme ? `${theme}-theme` : ''} table`}>
             <STableHeader headers={headers}
                           onSortChange={handleSortChange}
                           selectType={selectType} color={color}/>
@@ -42,7 +42,7 @@ function Table({headers, rows, mobileView, title, selectType, color}) {
                 {sortedData.map((rowData, index) => (
                     <STableBody key={index} rowData={rowData.data}
                                 selectType={selectType}
-                                color={color} />
+                                color={color}/>
                 ))}
             </div>
         </div>
