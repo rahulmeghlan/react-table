@@ -26,8 +26,8 @@
 }
 
 .s-checkbox input:checked ~ .checkmark {
-    background-color: #007bff;
-    border-color: #007bff;
+    /*background-color: #007bff;
+    border-color: #007bff;*/
 }
 
 .s-checkbox .checkmark:after {

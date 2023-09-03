@@ -20,9 +20,9 @@ export default {
 export const Table = {
     args: {
         headers: [
-            {id: Date.now(), label: 'Operator', sortable: true},
-            {id: Date.now(), label: 'Headset Display', sortable: true},
-            {id: Date.now(), label: '3G Availability', sortable: true}
+            {label: 'Operator', sortable: true},
+            {label: 'Headset Display', sortable: true},
+            {label: '3G Availability', sortable: true}
         ],
         data: [
             ['*Celcom Axiata (LTE)', 'CELCOM / MY Celcom / 502 19', 'Yes'],
@@ -30,10 +30,10 @@ export const Table = {
             ['*Maxis (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'],
             ['*U Mobile (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes']
         ],
-        onSortChange: () => {
-        },
         title: 'SList',
-        mobileView: false
+        mobileView: false,
+        selectType: 'single',
+        color: "#4A148C"
     },
 };
 

@@ -20,9 +20,9 @@ export default {
 export const List = {
     args: {
         headers: [
-            {id: Date.now(), label: 'Operator', sortable: true},
-            {id: Date.now(), label: 'Headset Display', sortable: true},
-            {id: Date.now(), label: '3G Availability', sortable: true}
+            {label: 'Operator', sortable: true},
+            {label: 'Headset Display', sortable: true},
+            {label: '3G Availability', sortable: true}
         ],
         data: [
             ['Celcom Axiata (LTE)', 'CELCOM / MY Celcom / 502 19', 'Yes'],

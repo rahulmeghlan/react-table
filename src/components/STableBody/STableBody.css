@@ -10,7 +10,6 @@
 .table-body-row {
     display: grid;
     border-bottom: 1px solid var(--grey-2);
-    grid-template-columns: repeat(3, 1fr);
     margin: 0 var(--space-24);
 }
 

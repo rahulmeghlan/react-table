@@ -11,6 +11,8 @@ const SCheckbox = ({
         backgroundColor: color,
         borderColor: color
     };
+
+
     return (
         <label className="s-checkbox">
             <input

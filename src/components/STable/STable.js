@@ -5,7 +5,7 @@ import STableBody from '../STableBody';
 import SList from '../SList';
 import './STable.css';
 
-function Table({headers, data, onSortChange, onCheckboxChange, mobileView, title}) {
+function Table({headers, data, mobileView, title, selectType, color}) {
     const [sortedData, setSortedData] = useState(data);
     const [sortDirection, setSortDirection] = useState('asc'); //Initial sorting direction
 
@@ -36,10 +36,12 @@ function Table({headers, data, onSortChange, onCheckboxChange, mobileView, title
         <div className="table">
             <STableHeader headers={headers}
                           onSortChange={handleSortChange}
-                          onCheckboxChange={onCheckboxChange}/>
+                          selectType={selectType} color={color}/>
             <div className="table-body">
                 {sortedData.map((rowData, index) => (
-                    <STableBody key={index} rowData={rowData}/>
+                    <STableBody key={index} rowData={rowData}
+                                selectType={selectType}
+                                color={color} />
                 ))}
             </div>
         </div>
