@@ -25,10 +25,10 @@ export const List = {
             {label: '3G Availability', sortable: true}
         ],
         data: [
-            ['Celcom Axiata (LTE)', 'CELCOM / MY Celcom / 502 19', 'Yes'],
-            ['DiGi Telecom (LTE)', 'DiGi 1800 / DiGi / MYMY18', 'Yes'],
-            ['Maxis (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'],
-            ['U Mobile (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes']
+            {id: Date.now(), data: ['*Celcom Axiata (LTE)', 'CELCOM / MY Celcom / 502 19', 'Yes'], isChecked: false},
+            {id: Date.now(), data: ['*DiGi Telecom (LTE)', 'DiGi 1800 / DiGi / MYMY18', 'Yes'], isChecked: false},
+            {id: Date.now(), data: ['*Maxis (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'], isChecked: false},
+            {id: Date.now(), data: ['*U Mobile (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'], isChecked: false}
         ],
         onSortChange: () => {
         },

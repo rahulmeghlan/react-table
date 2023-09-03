@@ -8,19 +8,19 @@ function SList({headers, data, title}) {
             {title ? <div className="s-list-title">{title}</div> : ''}
             <div className="s-list-items">
                 {
-                    data.map(items => (
-                        <div className="s-list-item">
+                    data.map((items, index) => (
+                        <div key={index} className="s-list-item">
                             <div className="s-list-item-header">
                                 {
-                                    headers.map(header => (
-                                        <div className="s-list-item-header-title">{header.label}:</div>
+                                    headers.map((header, hIndex) => (
+                                        <div key={hIndex} className="s-list-item-header-title">{header.label}:</div>
                                     ))
                                 }
                             </div>
                             <div className="s-list-item-body">
                                 {
-                                    items.map(item => (
-                                        <div className="s-list-item-body-title">{item}</div>
+                                    items.data.map((item, iIndex) => (
+                                        <div key={iIndex} className="s-list-item-body-title">{item}</div>
                                     ))
                                 }
                             </div>

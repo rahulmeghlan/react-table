@@ -5,14 +5,15 @@ import STableBody from '../STableBody';
 import SList from '../SList';
 import './STable.css';
 
-function Table({headers, data, mobileView, title, selectType, color}) {
-    const [sortedData, setSortedData] = useState(data);
+function Table({headers, rows, mobileView, title, selectType, color}) {
+    const [sortedData, setSortedData] = useState(rows);
     const [sortDirection, setSortDirection] = useState('asc'); //Initial sorting direction
 
     const handleSortChange = (headerIndex) => {
         const isAscending = sortDirection === 'asc';
         // Sort the data based on the selected header and direction
         const sorted = [...sortedData].sort((a, b) => {
+            console.log(a)
             if (a[headerIndex] < b[headerIndex]) {
                 return isAscending ? -1 : 1;
             }
@@ -39,7 +40,7 @@ function Table({headers, data, mobileView, title, selectType, color}) {
                           selectType={selectType} color={color}/>
             <div className="table-body">
                 {sortedData.map((rowData, index) => (
-                    <STableBody key={index} rowData={rowData}
+                    <STableBody key={index} rowData={rowData.data}
                                 selectType={selectType}
                                 color={color} />
                 ))}
