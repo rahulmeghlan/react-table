@@ -22,4 +22,9 @@
     --cell-padding: 24px;
     --icon-spacing: 28px;
     /* ... Other spacing variables ... */
+
+    --lg-screens: 768px;
+    --xl-screens: 992px;
+    --sm-screens: 576px;
+    /* ... Breakpoint variables   */
 }

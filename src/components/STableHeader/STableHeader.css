@@ -6,7 +6,6 @@
 .table-header {
     display: grid;
     background-color: var(--grey-1);
-    font-weight: bold;
     grid-template-columns: repeat(3, 1fr);
     border-radius: var(--space-16) var(--space-16) 0 0; /* Rounded corners */
     padding: var(--space-24); /* Padding */
@@ -17,19 +16,19 @@
 }
 
 /* Responsive font size */
-@media (min-width: 768px) {
+@media (min-width: var(--lg-screens)) {
     .table-header {
         font-size: var(--font-size-lg); /* Large screens */
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: var(--xl-screens)) {
     .table-header {
         font-size: var(--font-size-lg); /* Extra large screens */
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: var(--sm-screens)) {
     .table-header {
         font-size: var(--font-size-sm); /* Small screens */
     }
