@@ -2,45 +2,7 @@
 @import "../../styles/variables.css";
 
 .table {
-    border-radius: 16px;
+    border-radius: var(--space-16);
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Low box shadow */
-}
-
-/* Style the table header */
-.table-header {
-    display: grid;
-    background-color: #f7f7f7;
-    font-weight: bold;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-/* Style the table header cell */
-.table-header-cell {
-    flex: 1;
-    padding: var(--default-spacing);
-}
-
-/* Style the table body */
-.table-body {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Style the table body row */
-.table-body-row {
-    display: grid;
-    border-bottom: 1px solid #e1e1e1;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 0 var(--cell-padding);
-}
-
-.table-body-row:last-child, .table-body-row:last-child {
-    border: 0;
-}
-
-/* Style the table body cell */
-.table-body-cell {
-    padding: var(--cell-padding) 0;
-    margin-right: var(--cell-spacing);
 }

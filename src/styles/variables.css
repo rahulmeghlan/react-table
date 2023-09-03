@@ -3,12 +3,21 @@
 :root {
     --primary-color: #007bff;
     --secondary-color: #6c757d;
+    --grey-1: #f7f7f7;
+    --grey-2: #e1e1e1;
     /* ... Other color variables ... */
 
     --font-family: 'Arial', sans-serif;
+    --font-size-default: 18px;
+    --font-size-lg: 20px;
+    --font-size-sm: 16px;
     /* ... Other typography variables ... */
 
     --default-spacing: 8px;
+    --space-4: 4px;
+    --space-8: 8px;
+    --space-16: 16px;
+    --space-24: 24px;
     --cell-spacing: 16px;
     --cell-padding: 24px;
     --icon-spacing: 28px;

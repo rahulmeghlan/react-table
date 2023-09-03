@@ -1,5 +1,6 @@
 // TableBodyCell.js
 import React from 'react';
+import './STableBody.css';
 
 function TableBodyCell({ content }) {
     return <div className="table-body-cell">{content}</div>;

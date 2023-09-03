@@ -1,0 +1,25 @@
+@import "../../styles/variables.css";
+
+/* Style the table body */
+.table-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the table body row */
+.table-body-row {
+    display: grid;
+    border-bottom: 1px solid var(--grey-2);
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 var(--space-24);
+}
+
+.table-body-row:last-child, .table-body-row:last-child {
+    border: 0;
+}
+
+/* Style the table body cell */
+.table-body-cell {
+    padding: var(--space-24) 0;
+    margin-right: var(--space-16);
+}
