@@ -1,0 +1,56 @@
+/* Style the table container */
+@import "../../styles/variables.css";
+
+.table {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Low box shadow */
+}
+
+/* Style the table header */
+.table-header {
+    display: flex;
+    background-color: #f0f0f0;
+    padding: var(--default-spacing);
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style the table header cell */
+.table-header-cell {
+    flex: 1;
+    padding: var(--default-spacing);
+    text-align: center;
+    border-right: 1px solid #ccc;
+}
+
+/* Style the table body */
+.table-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the table body row */
+.table-body-row {
+    display: flex;
+    padding: var(--default-spacing);
+    border-bottom: 1px solid #ccc;
+}
+
+.table-body-row:last-child {
+    border: 0;
+}
+
+/* Style the table body cell */
+.table-body-cell {
+    flex: 1;
+    padding: var(--default-spacing);
+    text-align: center;
+    border-right: 1px solid #ccc;
+}
+
+.table-body-cell:last-child {
+    border: 0;
+}

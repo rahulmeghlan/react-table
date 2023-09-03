@@ -1,0 +1,55 @@
+@import "../../styles/variables.css";
+
+/* TableHeader.css */
+
+/* Table Header Container */
+.table-header {
+    background-color: #f7f7f7; /* Grey background color */
+    border-radius: 16px 16px 0 0; /* Rounded corners */
+    padding: 24px; /* Padding */
+    font-family: 'Avenir Heavy', sans-serif; /* Font: Avenir Heavy */
+    line-height: 1.75; /* Line height */
+    letter-spacing: 0; /* Letter spacing */
+    font-size: 18px; /* Default font size */
+}
+
+/* Responsive font size */
+@media (min-width: 768px) {
+    .table-header {
+        font-size: 20px; /* Large screens */
+    }
+}
+
+@media (min-width: 992px) {
+    .table-header {
+        font-size: 20px; /* Extra large screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .table-header {
+        font-size: 16px; /* Small screens */
+    }
+}
+
+/* Table Header Cell */
+.table-header-cell {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 16px; /* Spacing between cells */
+}
+
+/* Sortable Icon */
+.table-header-cell.sortable span {
+    display: flex;
+    align-items: center;
+}
+
+.table-header-cell.sortable i {
+    margin-left: 8px;
+}
+
+/* Checkbox */
+.table-header-cell input[type="checkbox"] {
+    margin-right: 4px; /* Spacing between checkbox and label */
+}
