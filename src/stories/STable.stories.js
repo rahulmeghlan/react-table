@@ -9,8 +9,17 @@ export default {
         layout: 'centered',
     },
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
-    tags: ['autodocs']
+    tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+    argTypes: {
+        selectType: {
+            control: 'select',
+            options: ['single', 'multiple', undefined]
+        },
+        theme: {
+            control: 'select', options: ['dark', 'light']
+        }
+    }
 
 };
 
@@ -31,10 +40,10 @@ export const Table = {
             {id: 4, data: ['DiGi Telecom (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'], selected: false}
         ],
         title: 'SList',
-        mobileView: true,
-        selectType: 'single',
+        mobileView: false,
         color: "#4A148C",
-        theme: 'light'
+        selectType: 'multiple',
+        theme: 'dark'
     },
 };
 

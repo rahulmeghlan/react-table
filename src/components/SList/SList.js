@@ -5,6 +5,25 @@ import '../../styles/dark-theme.css';
 import SCheckbox from "../SCheckbox";
 import SRadioButton from "../SRadioButton";
 
+/**
+ * SList Component
+ *
+ * The `SList` component is a flexible list view component that allows you to display data
+ * in a customizable list format. It supports various selection modes, themes, and provides
+ * options for rendering headers and body content.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {Array} props.headers - An array of header objects that define the column headers for the list.
+ * @param {Array} props.data - An array of data objects representing the rows of the list.
+ * @param {string} [props.title] - The title of the list, displayed at the top of the component.
+ * @param {string} [props.theme] - The theme of the list. Can be set to 'light' or 'dark'. The default is 'light'.
+ * @param {string} [props.selectType] - The selection type for the list. Can be set to 'single', 'multiple', or left
+ *   undefined for no selection. The default is undefined.
+ * @param {string} [props.color] - The color theme for the list's selection controls (checkboxes or radio buttons).
+ *   You can specify a color code or name.
+ * @returns {JSX.Element} The rendered `SList` component.
+ */
 function SList({headers, data, title, theme, selectType, color}) {
     const [selectState, setSelectState] = useState(false); //Initial select state
     const [sortedData, setSortedData] = useState(data);

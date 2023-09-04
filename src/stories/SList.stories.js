@@ -9,7 +9,16 @@ export default {
         layout: 'centered',
     },
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
-    tags: ['autodocs']
+    tags: ['autodocs'],
+    argTypes: {
+        selectType: {
+            control: 'select',
+            options: ['single', 'multiple', undefined]
+        },
+        theme: {
+            control: 'select', options: ['dark', 'light']
+        }
+    }
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 
 };
@@ -33,10 +42,9 @@ export const List = {
         onSortChange: () => {
         },
         title: 'SList Title',
-        theme: 'dark,',
+        theme: 'dark',
         color: "#4A148C",
         selectType: 'single'
-
     },
 };
 

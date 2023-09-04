@@ -6,11 +6,30 @@ import SList from '../SList';
 import './STable.css';
 import '../../styles/dark-theme.css';
 
+/**
+ * Table Component
+ *
+ * @param {Array} headers - An array of objects representing table headers.
+ * @param {Array} rows - An array of data rows for the table.
+ * @param {boolean} mobileView - Indicates if the table is displayed in mobile view.
+ * @param {string} title - The title of the table.
+ * @param {string} selectType - Type of selection ('single', 'multiple', or undefined).
+ * @param {string} color - The color code for the table.
+ * @param {string} theme - The theme ('dark' or undefined) for the table.
+ *
+ * @returns {JSX.Element} - Returns the table component.
+ */
 function Table({headers, rows, mobileView, title, selectType, color, theme}) {
     const [sortedData, setSortedData] = useState(rows);
     const [selectState, setSelectState] = useState(false); //Initial select state
     const defaultRows = JSON.parse(JSON.stringify(rows));
 
+    /**
+     * Handle Sorting of Table Data
+     *
+     * @param {Number} sortHeaderIndex - Column Index that was clicked
+     * @param {Object} header - The header object that was clicked.
+     */
     const handleSortChange = ({sortHeaderIndex, header}) => {
         if (header.sortDirection === 'default') {
             setSortedData(defaultRows);
@@ -34,6 +53,7 @@ function Table({headers, rows, mobileView, title, selectType, color, theme}) {
         setSortedData(sorted);
 
     }
+
 
     function handleSelectionChange() {
         let sorted;
