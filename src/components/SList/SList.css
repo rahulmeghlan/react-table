@@ -22,12 +22,27 @@
     border-bottom: 1px solid var(--grey-2);
 }
 
+.s-list-multiselect .s-list-title {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+}
+
+.s-list-multiselect .s-list-item {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
 .s-list-item:last-child {
     border-bottom: 0;
 }
 
-.s-list-item-header {
+.s-list-item-header,
+.s-list-item-checkbox {
     margin-right: var(--space-16);
+}
+
+.s-list-item-checkbox{
+    margin-top: var(--space-8);
 }
 
 .s-list-item-body-title {

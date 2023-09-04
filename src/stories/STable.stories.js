@@ -31,7 +31,7 @@ export const Table = {
             {id: 4, data: ['*U Mobile (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'], selected: false}
         ],
         title: 'SList',
-        mobileView: false,
+        mobileView: true,
         selectType: 'multiple',
         color: "#4A148C",
         theme: 'dark'
