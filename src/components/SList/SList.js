@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import './SList.css';
 import '../../styles/dark-theme.css';
 import SCheckbox from "../SCheckbox";
+import SRadioButton from "../SRadioButton";
 
 function SList({headers, data, title, theme, selectType, color}) {
     const [selectState, setSelectState] = useState(false); //Initial select state
@@ -40,10 +41,49 @@ function SList({headers, data, title, theme, selectType, color}) {
         });
 
 
-
         setSelectState(totalSelectCount === data.length);
         setSortedData(sorted);
 
+    }
+
+    if (selectType === 'single') {
+        return (
+            <div className={`${theme ? `${theme}-theme` : ''} s-list s-list-single-select`}>
+
+                <div className="s-list-title">
+                    <span>{title ? title : ''}</span>
+                </div>
+
+                <div className="s-list-items">
+                    {
+                        sortedData.map((row, index) => (
+                            <div key={index} className="s-list-item">
+                                <div className="s-list-item-checkbox">
+                                    <SRadioButton
+                                        color={color}
+                                        onClick={handleSelectionChange.bind(row)}
+                                        selected={row.selected}/>
+                                </div>
+                                <div className="s-list-item-header">
+                                    {
+                                        headers.map((header, hIndex) => (
+                                            <div key={hIndex} className="s-list-item-header-title">{header.label}:</div>
+                                        ))
+                                    }
+                                </div>
+                                <div className="s-list-item-body">
+                                    {
+                                        row.data.map((item, iIndex) => (
+                                            <div key={iIndex} className="s-list-item-body-title">{item}</div>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        );
     }
 
     if (selectType === 'multiple') {

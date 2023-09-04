@@ -27,7 +27,8 @@
     grid-template-columns: 60px 1fr;
 }
 
-.s-list-multiselect .s-list-item {
+.s-list-multiselect .s-list-item,
+.s-list-single-select .s-list-item {
     display: grid;
     grid-template-columns: auto auto auto;
 }
@@ -41,7 +42,7 @@
     margin-right: var(--space-16);
 }
 
-.s-list-item-checkbox{
+.s-list-item-checkbox {
     margin-top: var(--space-8);
 }
 

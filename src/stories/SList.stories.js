@@ -35,7 +35,7 @@ export const List = {
         title: 'SList Title',
         theme: 'dark,',
         color: "#4A148C",
-        selectType: 'multiple'
+        selectType: 'single'
 
     },
 };
