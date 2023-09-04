@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# React Table Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A flexible and customizable React table component for creating tables with sorting, selection, and responsive list views.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [About](#about)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## About
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The React Table Component is a versatile table solution for React applications. It provides features like column sorting, row selection, and the ability to switch between table and list views on mobile devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Column sorting with ascending and descending order.
+- Row selection with options for single and multiple selections.
+- Responsive design that automatically switches to a list view on mobile devices.
+- Customizable table header and body.
+- Supports both light and dark themes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+To use the React Table Component in your project, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/rahulmeghlan/react-table.git
+2. Install dependencies: `npm install`.
+   
+3. Start the storybook: `npm run storybook`   
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
+   ```bash
+   import Table from './Table';
+   const headers = [
+       {label: 'Operator', sortable: true, sortDirection: 'default'},
+       {label: 'Headset Display', sortable: true, sortDirection: 'default'},
+       {label: '3G Availability', sortable: false, sortDirection: 'default'}
+   ];
+   
+   const rows = [
+       {id: 1, data: ['Celcom Axiata (LTE)', 'CELCOM / MY Celcom / 502 19', 'Yes'], selected: false},
+       {id: 2, data: ['Maxis (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'], selected: false},
+       {id: 3, data: ['U Mobile (LTE)', 'DiGi 1800 / DiGi / MYMY18', 'Yes'], selected: false},
+       {id: 4, data: ['DiGi Telecom (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'], selected: false}
+   ];
+   
+   <STable
+               headers={headers}
+               rows={rows}
+               mobileView={false}
+               title="Test Table"
+               selectType="multiple"
+               color="blue"
+               theme="dark"
+           />
+```
+## Sample Table
+<img src="./readme-images/table.png" alt="Table Example" width="600" />
 
-### `npm run eject`
+## Sample List
+<img src="./readme-images/list-dark.png" alt="List Example" width="600" />
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+We welcome contributions from the community. To contribute to this project:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Fork the project.
+Create a new branch for your feature or bug fix.
+Make your changes and commit them with descriptive messages.
+Push your changes to your fork.
+Create a pull request to merge your changes into the main repository.
 
-## Learn More
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgments
+Thanks to the React community for inspiration and support.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This README provides an overview of the React Table Component, how to get started, how to use it in your application, and how to contribute to the project. Customize it further to match your specific project's details and requirements.
