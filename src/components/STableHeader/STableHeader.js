@@ -1,17 +1,30 @@
 import SCheckbox from "../SCheckbox";
 import './STableHeader.css';
-import {useState} from "react";
 
-function STableHeaderCell({label, sortable, onSortChange, sortHeaderIndex}) {
+function STableHeaderCell({header, onSortChange, sortHeaderIndex}) {
     const handleSortClick = () => {
-        if (sortable) {
-            onSortChange(sortHeaderIndex);
+        if (header.sortable) {
+            switch (header.sortDirection) {
+                case 'asc':
+                    header.sortDirection = 'desc';
+                    break;
+                case 'desc':
+                    header.sortDirection = 'default';
+                    break;
+                case 'default':
+                    header.sortDirection = 'asc';
+                    break;
+                default:
+                    header.sortDirection = 'default';
+            }
+
+            onSortChange({sortHeaderIndex, header});
         }
     }
 
     return (
-        <div onClick={handleSortClick} className='s-table-header-cell'>
-            <span> {label} <i className='fas fa-sort'></i></span>
+        <div onClick={handleSortClick} className={`s-table-header-cell ${header.sortable && 'sortable'}`}>
+            <span> {header.label} {header.sortable ? `(${header.sortDirection})` : ''}</span>
         </div>
     )
 }
@@ -25,8 +38,7 @@ function STableHeader({headers, onSortChange, selectType, color, onSelectionChan
                 {headers.map((header, index) => (
                     <STableHeaderCell
                         key={index}
-                        label={header.label}
-                        sortable={header.sortable}
+                        header={header}
                         sortHeaderIndex={index}
                         onSortChange={onSortChange}
                     />
@@ -47,8 +59,7 @@ function STableHeader({headers, onSortChange, selectType, color, onSelectionChan
                 {headers.map((header, index) => (
                     <STableHeaderCell
                         key={index}
-                        label={header.label}
-                        sortable={header.sortable}
+                        header={header}
                         sortHeaderIndex={index}
                         onSortChange={onSortChange}
                     />
@@ -67,8 +78,7 @@ function STableHeader({headers, onSortChange, selectType, color, onSelectionChan
                 {headers.map((header, index) => (
                     <STableHeaderCell
                         key={index}
-                        label={header.label}
-                        sortable={header.sortable}
+                        header={header}
                         sortHeaderIndex={index}
                         onSortChange={onSortChange}
                     />

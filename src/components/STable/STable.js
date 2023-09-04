@@ -8,23 +8,29 @@ import '../../styles/dark-theme.css';
 
 function Table({headers, rows, mobileView, title, selectType, color, theme}) {
     const [sortedData, setSortedData] = useState(rows);
-    const [sortDirection, setSortDirection] = useState('asc'); //Initial sorting direction
     const [selectState, setSelectState] = useState(false); //Initial select state
+    const defaultRows = JSON.parse(JSON.stringify(rows));
 
-    const handleSortChange = (headerIndex) => {
-        const isAscending = sortDirection === 'asc';
+    const handleSortChange = ({sortHeaderIndex, header}) => {
+        if (header.sortDirection === 'default') {
+            setSortedData(defaultRows);
+            return;
+        }
         // Sort the data based on the selected header and direction
         const sorted = [...sortedData].sort((a, b) => {
-            if (a[headerIndex] < b[headerIndex]) {
-                return isAscending ? -1 : 1;
+            if (a.data[sortHeaderIndex] === b.data[sortHeaderIndex]) {
+                return 0;
             }
-            if (a[headerIndex] > b[headerIndex]) {
-                return isAscending ? 1 : -1;
+            if (header.sortDirection === 'asc') {
+                return a.data[sortHeaderIndex] < b.data[sortHeaderIndex] ? -1 : 1;
             }
-            return 0;
+
+            if (header.sortDirection === 'desc') {
+                return a.data[sortHeaderIndex] > b.data[sortHeaderIndex] ? -1 : 1;
+            }
         });
 
-        setSortDirection(isAscending ? 'desc' : 'asc');
+
         setSortedData(sorted);
 
     }
@@ -80,7 +86,7 @@ function Table({headers, rows, mobileView, title, selectType, color, theme}) {
     return (
         <div className={`${theme ? `${theme}-theme` : ''} table`}>
             <STableHeader headers={headers}
-                          onSortChange={handleSortChange}
+                          onSortChange={handleSortChange.bind(headers)}
                           onSelectionChange={handleHeaderSelectionChange}
                           selectState={selectState}
                           selectType={selectType}

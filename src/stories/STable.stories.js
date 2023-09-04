@@ -20,15 +20,15 @@ export default {
 export const Table = {
     args: {
         headers: [
-            {label: 'Operator', sortable: true},
-            {label: 'Headset Display', sortable: true},
-            {label: '3G Availability', sortable: true}
+            {label: 'Operator', sortable: true, sortDirection: 'default'},
+            {label: 'Headset Display', sortable: true, sortDirection: 'default'},
+            {label: '3G Availability', sortable: false, sortDirection: 'default'}
         ],
         rows: [
-            {id: 1, data: ['*Celcom Axiata (LTE)', 'CELCOM / MY Celcom / 502 19', 'Yes'], selected: false},
-            {id: 2, data: ['*DiGi Telecom (LTE)', 'DiGi 1800 / DiGi / MYMY18', 'Yes'], selected: false},
-            {id: 3, data: ['*Maxis (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'], selected: false},
-            {id: 4, data: ['*U Mobile (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'], selected: false}
+            {id: 1, data: ['Celcom Axiata (LTE)', 'CELCOM / MY Celcom / 502 19', 'Yes'], selected: false},
+            {id: 2, data: ['Maxis (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'], selected: false},
+            {id: 3, data: ['U Mobile (LTE)', 'DiGi 1800 / DiGi / MYMY18', 'Yes'], selected: false},
+            {id: 4, data: ['DiGi Telecom (LTE)', 'U Mobile / MYS 18 / MY 18', 'Yes'], selected: false}
         ],
         title: 'SList',
         mobileView: true,

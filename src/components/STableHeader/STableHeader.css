@@ -36,9 +36,12 @@
 
 /* Table Header Cell */
 .s-table-header-cell {
-    cursor: pointer;
     display: inline-block;
     margin-right: var(--space-16); /* Spacing between cells */
+}
+
+.s-table-header-cell.sortable {
+    cursor: pointer;
 }
 
 /* Sortable Icon */
