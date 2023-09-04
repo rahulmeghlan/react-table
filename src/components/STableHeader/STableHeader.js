@@ -16,11 +16,7 @@ function STableHeaderCell({label, sortable, onSortChange, sortHeaderIndex}) {
     )
 }
 
-function STableHeader({headers, onSortChange, selectType, color}) {
-    const [isChecked, setIsChecked] = useState(false); //Initial checkbox state
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
-    };
+function STableHeader({headers, onSortChange, selectType, color, onSelectionChange, selectState}) {
     let gridColumnStyle = {gridTemplateColumns: `repeat(${headers.length}, 1fr)`};
 
     if (!selectType) {
@@ -39,12 +35,34 @@ function STableHeader({headers, onSortChange, selectType, color}) {
         );
     }
 
+    if (selectType === 'multiple') {
+        gridColumnStyle = {gridTemplateColumns: `repeat(${headers.length + 1}, 1fr)`}
+        return (
+            <div className="table-header" style={gridColumnStyle}>
+                <div className="s-table-header-cell">
+                    <SCheckbox onChange={onSelectionChange}
+                               color={color}
+                               checked={selectState}/>
+                </div>
+                {headers.map((header, index) => (
+                    <STableHeaderCell
+                        key={index}
+                        label={header.label}
+                        sortable={header.sortable}
+                        sortHeaderIndex={index}
+                        onSortChange={onSortChange}
+                    />
+                ))}
+            </div>
+        );
+    }
+
     if (selectType === 'single') {
         gridColumnStyle = {gridTemplateColumns: `repeat(${headers.length + 1}, 1fr)`}
         return (
             <div className="table-header" style={gridColumnStyle}>
                 <div className="s-table-header-cell">
-                    <SCheckbox onChange={handleCheckboxChange} color={color} checked={isChecked}/>
+
                 </div>
                 {headers.map((header, index) => (
                     <STableHeaderCell

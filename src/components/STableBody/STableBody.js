@@ -11,11 +11,6 @@ function TableBodyCell({content}) {
 function STableBodyRow({rowData, selectType, color, onSelectionChange}) {
     let columns = rowData.data.length;
     let gridColumnStyle = {gridTemplateColumns: `repeat(${selectType ? columns + 1 : columns}, 1fr)`}
-    const [isChecked, setIsChecked] = useState(false); //Initial checkbox state
-
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
-    };
 
     if (!selectType) {
         return (
@@ -49,10 +44,10 @@ function STableBodyRow({rowData, selectType, color, onSelectionChange}) {
 
             <div className="table-body-cell">
                 <SCheckbox color={color}
-                           onChange={handleCheckboxChange}
-                           checked={isChecked}/>
+                           onChange={onSelectionChange}
+                           checked={rowData.selected}/>
             </div>
-            {rowData.map((cellContent, index) => (
+            {rowData.data.map((cellContent, index) => (
                 <TableBodyCell key={index} content={cellContent}/>
             ))}
         </div>

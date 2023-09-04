@@ -32,7 +32,7 @@ export const Table = {
         ],
         title: 'SList',
         mobileView: false,
-        selectType: 'single',
+        selectType: 'multiple',
         color: "#4A148C",
         theme: 'dark'
     },

@@ -9,6 +9,7 @@ import '../../styles/dark-theme.css';
 function Table({headers, rows, mobileView, title, selectType, color, theme}) {
     const [sortedData, setSortedData] = useState(rows);
     const [sortDirection, setSortDirection] = useState('asc'); //Initial sorting direction
+    const [selectState, setSelectState] = useState(false); //Initial select state
 
     const handleSortChange = (headerIndex) => {
         const isAscending = sortDirection === 'asc';
@@ -30,20 +31,34 @@ function Table({headers, rows, mobileView, title, selectType, color, theme}) {
 
     function handleSelectionChange() {
         let sorted;
-        if (selectType === 'single') {
-            sorted = sortedData.map(item => {
-                if (item.id !== this.id) {
-                    item.selected = false;
-                } else {
-                    item.selected = !item.selected
+        sorted = sortedData.map(item => {
+            if (selectType === 'multiple') {
+                if (this.id === item.id) {
+                    item.selected = !item.selected;
                 }
+                return item;
+            }
 
-                return item
-            });
-        }
+            if (item.id !== this.id) {
+                item.selected = false;
+            } else {
+                item.selected = !item.selected
+            }
+
+            return item
+        });
 
         setSortedData(sorted);
 
+    }
+
+    function handleHeaderSelectionChange() {
+        let sorted = sortedData.map(item => {
+            item.selected = !selectState;
+            return item;
+        });
+        setSelectState(!selectState);
+        setSortedData(sorted);
     }
 
     if (mobileView) {
@@ -55,7 +70,10 @@ function Table({headers, rows, mobileView, title, selectType, color, theme}) {
         <div className={`${theme ? `${theme}-theme` : ''} table`}>
             <STableHeader headers={headers}
                           onSortChange={handleSortChange}
-                          selectType={selectType} color={color}/>
+                          onSelectionChange={handleHeaderSelectionChange}
+                          selectState={selectState}
+                          selectType={selectType}
+                          color={color}/>
             <div className="table-body">
                 {sortedData.map((rowData, index) => (
                     <STableBody key={index}
