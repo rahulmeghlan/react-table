@@ -42,15 +42,16 @@
 
 .s-table-header-cell.sortable {
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
-/* Sortable Icon */
 .s-table-header-cell.sortable span {
     display: flex;
     align-items: center;
 }
 
-/* Checkbox */
-.s-table-header-cell input[type="checkbox"] {
-    margin-right: var(--space-4); /* Spacing between checkbox and label */
+.sort-icon {
+    margin-left: var(--space-8);
+    width: var(--space-8);
 }

@@ -1,21 +1,30 @@
 import SCheckbox from "../SCheckbox";
 import './STableHeader.css';
+import IconAsc from '../../assets/up.png';
+import IconDesc from '../../assets/down.png';
+import IconDefault from '../../assets/default.png';
+import {useState} from "react";
 
 function STableHeaderCell({header, onSortChange, sortHeaderIndex}) {
+    const [icon, setIcon] = useState(IconDefault);
     const handleSortClick = () => {
         if (header.sortable) {
             switch (header.sortDirection) {
                 case 'asc':
                     header.sortDirection = 'desc';
+                    setIcon(IconDesc)
                     break;
                 case 'desc':
                     header.sortDirection = 'default';
+                    setIcon(IconDefault)
                     break;
                 case 'default':
                     header.sortDirection = 'asc';
+                    setIcon(IconAsc)
                     break;
                 default:
                     header.sortDirection = 'default';
+                    setIcon(IconDefault)
             }
 
             onSortChange({sortHeaderIndex, header});
@@ -24,7 +33,11 @@ function STableHeaderCell({header, onSortChange, sortHeaderIndex}) {
 
     return (
         <div onClick={handleSortClick} className={`s-table-header-cell ${header.sortable && 'sortable'}`}>
-            <span> {header.label} {header.sortable ? `(${header.sortDirection})` : ''}</span>
+            <span> {header.label} </span>
+
+            {header.sortable &&
+                <img className='sort-icon' src={icon} />
+            }
         </div>
     )
 }
