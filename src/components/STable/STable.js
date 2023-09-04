@@ -28,6 +28,24 @@ function Table({headers, rows, mobileView, title, selectType, color, theme}) {
 
     }
 
+    function handleSelectionChange() {
+        let sorted;
+        if (selectType === 'single') {
+            sorted = sortedData.map(item => {
+                if (item.id !== this.id) {
+                    item.selected = false;
+                } else {
+                    item.selected = !item.selected
+                }
+
+                return item
+            });
+        }
+
+        setSortedData(sorted);
+
+    }
+
     if (mobileView) {
         return (
             <SList headers={headers} data={sortedData} title={title}></SList>
@@ -40,8 +58,10 @@ function Table({headers, rows, mobileView, title, selectType, color, theme}) {
                           selectType={selectType} color={color}/>
             <div className="table-body">
                 {sortedData.map((rowData, index) => (
-                    <STableBody key={index} rowData={rowData.data}
+                    <STableBody key={index}
+                                rowData={rowData}
                                 selectType={selectType}
+                                onSelectionChange={handleSelectionChange.bind(rowData)}
                                 color={color}/>
                 ))}
             </div>

@@ -2,13 +2,14 @@
 import React, {useState} from 'react';
 import './STableBody.css';
 import SCheckbox from "../SCheckbox";
+import SRadioButton from "../SRadioButton";
 
 function TableBodyCell({content}) {
     return <div className="table-body-cell">{content}</div>;
 }
 
-function STableBodyRow({rowData, selectType, color}) {
-    let columns = rowData.length;
+function STableBodyRow({rowData, selectType, color, onSelectionChange}) {
+    let columns = rowData.data.length;
     let gridColumnStyle = {gridTemplateColumns: `repeat(${selectType ? columns + 1 : columns}, 1fr)`}
     const [isChecked, setIsChecked] = useState(false); //Initial checkbox state
 
@@ -19,7 +20,24 @@ function STableBodyRow({rowData, selectType, color}) {
     if (!selectType) {
         return (
             <div className="table-body-row" style={gridColumnStyle}>
-                {rowData.map((cellContent, index) => (
+                {rowData.data.map((cellContent, index) => (
+                    <TableBodyCell key={index} content={cellContent}/>
+                ))}
+            </div>
+        );
+    }
+
+    if (selectType === 'single') {
+        return (
+            <div className="table-body-row" style={gridColumnStyle}>
+                <div className="table-body-cell">
+
+                    <SRadioButton
+                        color={color}
+                        onClick={onSelectionChange}
+                        selected={rowData.selected}/>
+                </div>
+                {rowData.data.map((cellContent, index) => (
                     <TableBodyCell key={index} content={cellContent}/>
                 ))}
             </div>
