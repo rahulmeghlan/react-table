@@ -69,7 +69,12 @@ function Table({headers, rows, mobileView, title, selectType, color, theme}) {
 
     if (mobileView) {
         return (
-            <SList headers={headers} data={sortedData} title={title}></SList>
+            <SList headers={headers}
+                   data={sortedData}
+                   title={title}
+                   selectType={selectType}
+                   color={color}
+                   theme={theme}></SList>
         );
     }
     return (
