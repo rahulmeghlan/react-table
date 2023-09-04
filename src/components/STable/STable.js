@@ -31,10 +31,14 @@ function Table({headers, rows, mobileView, title, selectType, color, theme}) {
 
     function handleSelectionChange() {
         let sorted;
+        let totalSelectCount = 0;
         sorted = sortedData.map(item => {
             if (selectType === 'multiple') {
                 if (this.id === item.id) {
                     item.selected = !item.selected;
+                }
+                if (item.selected) {
+                    ++totalSelectCount;
                 }
                 return item;
             }
@@ -48,6 +52,8 @@ function Table({headers, rows, mobileView, title, selectType, color, theme}) {
             return item
         });
 
+
+        setSelectState(totalSelectCount === sortedData.length);
         setSortedData(sorted);
 
     }
